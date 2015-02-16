@@ -1,0 +1,73 @@
+.secsrub {
+	width: 350px;
+	height: auto;
+	position: relative;
+}
+
+#progress {
+	width: 0;
+	height: 15px;
+	border-radius: 3px;
+	background-color: #8e8d8d;
+}
+
+#playbutton {
+	display: inline-block;
+	position: relative;
+	float: right;
+}
+
+#slider {
+	display: inline-block;
+	position: relative;
+	border: 1px solid black;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	background-color: #8e8d8d;
+	background: url('../img/bg-track.png') repeat top left;
+   	box-shadow: inset 0 1px 5px 0px rgba(0, 0, 0, .5), 
+   				  0 1px 0 0px rgba(250, 250, 250, .5);
+   				  
+}
+
+#slider .ui-slider-range {
+	background: #729fcf; 
+}
+
+#timedisplay {
+	display: inline-block;
+	position: relative;
+}
+
+#volcontrol {
+	display: inline-block;
+	position: relative;
+}
+
+.individualprogress {
+	width: 0;
+	height: 15px;
+	border-radius: 3px;
+	background-color: #8e8d8d;
+}
+
+.individualslider {
+	position: relative;
+	border: 1px solid black;
+	padding: 0;
+	width: 160px;
+	margin: auto;
+	margin-top: 0px;
+}
+
+.individualvolslider {
+	position: relative;
+	border: 1px solid black;
+	padding: 0;
+	width: 160px;
+	margin: auto;
+	margin-top: 0px;
+}

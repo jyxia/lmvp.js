@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="./img/logo.png">
+
+    <title>Light MVP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/dashboard.css" rel="stylesheet">
+
+
+    <link href="./css/style.css" rel="stylesheet">
+
+    <!-- <link href="css/scrubberstyle.css" rel="stylesheet" type="text/css">   -->
+   
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/jquery.qtip.min.css" />
+    <!-- place this css after default jquery ui css -->
+    <link href="css/player.css" rel="stylesheet" type="text/css">
+    <link href="css/volstyle.css" rel="stylesheet" type="text/css">
+    <link href="css/colorbrewer.css" rel="stylesheet" type="text/css">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Multi-Video Player</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <!-- <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form> -->
+          <ul class="nav navbar-nav">
+              <li class="active"><a href="./index.html">Home</a></li>
+              <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Save/Retrieve
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" id="saveretrieve"> 
+                    <li><a id="saveState" tabindex="-1" href="#">Save Current Session</a></li>
+                    <li><a id="retrieveState" tabindex="-1" href="#">Retrieve Saved Session</a></li>
+                </ul> 
+              </li>
+              <!-- <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Videos
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu"> 
+                    <li><a id="defaultVideo" tabindex="-1" href="./default.html">Test</a></li>
+                    <li><a id="chelsea" tabindex="-1" href="./index.html">Chelsea Top 10</a></li>
+                    <li><a id="messi" tabindex="-1" href="./messi.html">Messi 2012</a></li>
+                    <li><a id="mj" tabindex="-1" href="./jordan.html">Micheal Jordan</a></li>
+                </ul> 
+              </li> -->
+              <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Duration Options
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu"> 
+                    <li><a id="longDuration" tabindex="-1">Long Duration</a></li>
+                    <li><a id="shortDuration" tabindex="-1" href="#">Short Duration</a></li>
+                </ul> 
+                <li>
+                    <a id="log" href="./DisplayInfo">UI Logs</a>
+                </li>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="side_preview" class="col-sm-3 col-md-2 sidebar">
+          <div class="toggle-size-header"> 
+              <a class="toggle-size-close-btn toggle-btn" title="Show/Hide Previews">
+                <span class="glyphicon glyphicon-chevron-left leftToggle"></span>
+                <span class="glyphicon glyphicon-chevron-right rightToggle"></span>
+              </a>
+          </div>
+          <div class="video_prev_container"> 
+          <ul id="preview_gallery" class="nav nav-sidebar">
+            <li>
+              <div class="videoprev galleryImg" id="video1">
+                  <!-- <div class="ui-draggable-handle"></div> -->
+                  <img src="./videoimages/oscargoal"></img>
+              </div>
+            </li>
+            <li>
+              <div class="videoprev galleryImg" id="video2">
+                  <img src="./videoimages/mcd"></img>
+              </div>
+            </li>
+            <li>
+              <div class="videoprev galleryImg" id="video3">
+                  <img src="./videoimages/10s"></img>
+              </div>
+            </li>
+            <li>
+              <div class="videoprev galleryImg" id="video4">
+                  <img src="./videoimages/movie_300"></img>
+              </div>
+            </li>
+            <li>
+              <div class="videoprev galleryImg" id="video5">
+                  <img src="./videoimages/bigbulkbunny"></img>
+              </div>
+            </li>
+          </ul>
+        </div>  
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <!-- <h1 class="page-header">Drop Here</h1> -->
+          <!-- <div id="player" class="row">
+                    <div class="col-md-1 col-md-offset-2 placeholder">
+                        <button id="playbutton"> 
+                          <span class="glyphicon glyphicon-play"></span></button>
+                    </div>  
+                    <div class="col-md-4 placeholder"> 
+                        <div id="slider" ><div id="progress"> </div></div>
+                    </div>
+                    <div class="col-md-1 placeholder">
+                        <div id="timedisplay"><span id="current_time_display">0:00</span>/<span id="duration_display">0:00
+                        </span></div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="volcontrol placeholder">
+                            <section>
+                            <span class="tooltip" id="volTooltip"></span>
+                            <div id="volumeslider"></div> 
+                            <span class="volume"></span> 
+                            </section>
+                        </div>
+                    </div>
+          </div>   -->
+          <div class="controlcontainer">
+
+            <div class="video_player">
+              
+                <div class="custom_controls">
+                    <!-- <a class="play" title="Play"></a>
+                    <a class="pause" title="Pause"></a> -->
+                  <div class="playbtn">
+                    <button type="button" id="playbutton" class="btn btn-primary btn-xs">
+                        <span class="glyphicon glyphicon-play newplay" title="Play"></span>
+                        <span class="glyphicon glyphicon-pause newpause" title="Pause"></span>
+                        <span class="glyphicon glyphicon-repeat newrepeat" title="Replay"></span>
+                    </button>
+                  </div>
+                    <div class="time_slider"></div>
+                    <div class="timer">
+                      <span id="current_time_display">00:00</span>/<span id="duration_display">00:00</span>
+                    </div>
+                    <!-- <div class="volume">
+                        <div class="volume_slider"></div>
+                        <a class="mute" title="Mute"></a>
+                        <a class="unmute" title="Unmute"></a>
+                    </div> -->
+                    <div id="volcontrol">
+                        <section>
+                        <span class="tooltip" id="volTooltip"></span>
+                        <div id="volumeslider"></div> 
+                        <span class="volume"></span> 
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dropzone" class="box placeholder">
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    
+    <script src="js/popcorn-complete.js"> </script>
+    <script src="./js/bootstrap.min.js"></script> 
+    <script src="js/jquery.qtip.min.js"></script> <!-- local version 11.0.1 -->
+    <script src="js/d3.min.js"></script>
+    <!-- // <script src="js/colorbrewer.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.0/bootstrap.min.js"></script> -->
+    <!-- <script src="js/multiplayer.js"></script> -->
+    <script src="js/variables.js"></script> 
+    <script src="js/youtubemulti.js"></script>
+    <script src="js/functions.js"></script> 
+    <!-- <script src="js/dragdrop.js"></script> -->
+  </body>
+</html>

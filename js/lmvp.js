@@ -546,10 +546,10 @@ function setPopVideo(i) {
     var videoId = "#" + "video" + i;
     if ( i == 1) {
         popVideo = Popcorn.smart(videoId, 
-                    "https://www.youtube.com/watch?v=9CEdSB0lWRs");  //oscar
+                    "https://www.youtube.com/watch?v=4i_GFrlaStQ");  //mo
     } else if ( i == 2) {
         popVideo = Popcorn.smart(videoId, 
-                    "https://www.youtube.com/watch?v=kH0qhoOivrQ");  // nike
+                    "https://www.youtube.com/watch?v=xIJSw3Mhyd8");  // nike
     } else if (i == 3) {
         popVideo = Popcorn.smart(videoId, 
                     "https://www.youtube.com/watch?v=SuHmEo0Bx7Q");  // 10s video
@@ -558,7 +558,7 @@ function setPopVideo(i) {
                     "./videos/movie_300.mp4");
     } else if (i == 5) {
         popVideo = Popcorn.smart(videoId, 
-                    "http://vimeo.com/44786351"); // big buck bunny
+                    "https://vimeo.com/11519435"); // big buck bunny
     }
 
     return popVideo;

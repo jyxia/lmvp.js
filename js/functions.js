@@ -4,7 +4,7 @@
  * UNC Charlotte
  */
 
-var videoLib = new Array();  // an array contains all available videos in the left nav, global variable.
+// var videoLib = new Array();  // an array contains all available videos in the left nav, global variable.
 var $newDuration = $("#duration_display");
 var $currentTimeDisplay = $("#current_time_display");
 var $timer = $(".time_slider");
@@ -30,6 +30,7 @@ $(document).ready(function () {
         $(this).bind("dblclick", dbclickVideo);
     });
     mvplayer.initCanvas($previewImg, $dropzone, $playbutton);
+
     //saveQtip($("#saveState"));
     //retrieveQtip($("#retrieveState"));
     // $(".video_player").myPlayer(mvplayer);

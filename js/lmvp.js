@@ -552,14 +552,14 @@ function setPopVideo(i) {
                     "https://www.youtube.com/watch?v=xIJSw3Mhyd8");  // nike
     } else if (i == 3) {
         popVideo = Popcorn.smart(videoId, 
-                    "https://www.youtube.com/watch?v=SuHmEo0Bx7Q");  // 10s video
+                    "./videos/movie_300.mp4");
     } else if (i == 4) {
         popVideo = Popcorn.smart(videoId, 
-                    "./videos/movie_300.mp4");
+                    "https://vimeo.com/11519435"); // big buck bunny
     } else if (i == 5) {
         popVideo = Popcorn.smart(videoId, 
-                    "https://vimeo.com/11519435"); // big buck bunny
-    }
+                    "https://www.youtube.com/watch?v=SuHmEo0Bx7Q");  // 10s video
+    } 
 
     return popVideo;
 }
@@ -568,19 +568,19 @@ function createThumbernail(id) {
     $img = $(document.createElement("img"));
     switch (id) {
         case 1:
-            $img.attr("src", "./videoimages/oscargoal");
+            $img.attr("src", "https://i.ytimg.com/vi/4i_GFrlaStQ/mqdefault.jpg");
             break;
         case 2:
-            $img.attr("src", "./videoimages/mcd");
+            $img.attr("src", "https://i.ytimg.com/vi_webp/xIJSw3Mhyd8/mqdefault.webp");
             break;
         case 3:
-            $img.attr("src", "./videoimages/10s");
-            break;
-        case 4:
             $img.attr("src", "./videoimages/movie_300");
             break;
+        case 4:
+            $img.attr("src", "https://i.vimeocdn.com/video/63478365_590x332.webp");
+            break;
         case 5:
-            $img.attr("src", "./videoimages/bigbulkbunny");
+            $img.attr("src", "./videoimages/10s");
             break;    
     }
     
